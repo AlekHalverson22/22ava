@@ -39,17 +39,6 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-.fade-in {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: 0.9s ease;
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 /* ================= HEADER ================= */
 
 header {
@@ -60,7 +49,7 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  background: linear-gradient(180deg, rgba(0,0,0,0.9), rgba(0,0,0,0.4));
+  background: linear-gradient(180deg, rgba(0,0,0,0.95), rgba(0,0,0,0.6));
   backdrop-filter: blur(12px);
   z-index: 1000;
 }
@@ -68,23 +57,23 @@ header {
 /* LOGO */
 
 header img {
-  height: 95px;
+  height: 90px;
   width: auto;
   cursor: pointer;
   transition: 0.3s ease;
-  filter: drop-shadow(0 0 8px rgba(255,47,125,0.2));
+  filter: drop-shadow(0 0 10px rgba(255,47,125,0.25));
 }
 
 header img:hover {
-  transform: scale(1.03);
+  transform: scale(1.04);
 }
 
-/* NAVIGATION */
+/* NAV */
 
 nav {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 26px;
 }
 
 nav a {
@@ -116,12 +105,12 @@ nav a:hover::after {
   width: 100%;
 }
 
-/* ================= HERO SECTION ================= */
+/* ================= HERO ================= */
 
 .hero {
   display: flex;
   align-items: center;
-  padding: 150px 80px 70px;
+  padding: 160px 80px 80px;
   background: linear-gradient(120deg, #050505 0%, #0c0c0c 50%, #14060c 100%);
   position: relative;
 }
@@ -130,22 +119,21 @@ nav a:hover::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 18% 50%, rgba(255,47,125,0.22), transparent 45%);
+  background: radial-gradient(circle at 20% 50%, rgba(255,47,125,0.22), transparent 45%);
   pointer-events: none;
 }
 
 .hero-content {
-  max-width: 700px;
+  max-width: 720px;
   position: relative;
   z-index: 2;
 }
 
 .hero h1 {
-  font-size: 70px;
+  font-size: 72px;
   font-weight: 900;
   line-height: 1.02;
   margin-bottom: 20px;
-  letter-spacing: -1px;
 }
 
 .hero p {
@@ -160,7 +148,7 @@ nav a:hover::after {
 
 .btn {
   display: inline-block;
-  padding: 13px 34px;
+  padding: 14px 36px;
   border-radius: 40px;
   background: linear-gradient(135deg, var(--pink), var(--pink-soft));
   color: black;
@@ -174,13 +162,13 @@ nav a:hover::after {
 
 .btn:hover {
   transform: translateY(-2px) scale(1.03);
-  box-shadow: 0 0 18px rgba(255,47,125,0.45);
+  box-shadow: 0 0 20px rgba(255,47,125,0.45);
 }
 
 /* ================= SECTIONS ================= */
 
 section {
-  padding: 70px 80px;
+  padding: 80px 80px;
 }
 
 .section-title {
@@ -201,25 +189,22 @@ section {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 30px;
 }
 
 .card {
   background: linear-gradient(180deg, #0b0b0b, #050505);
   border: 1px solid #1a1a1a;
-  padding: 30px;
+  padding: 28px;
   border-radius: 18px;
   transition: 0.35s;
-  position: relative;
-  overflow: hidden;
 }
 
 .card img {
   width: 100%;
   border-radius: 14px;
   margin-bottom: 16px;
-  display: block;
 }
 
 .card:hover {
@@ -238,11 +223,8 @@ section {
   line-height: 1.6;
 }
 
-/* ================= CONTACT PAGE FIX ================= */
-
 .card .btn {
   margin-top: 18px;
-  width: fit-content;
 }
 
 /* ================= FORMS ================= */
@@ -274,48 +256,40 @@ footer {
   background: #050505;
 }
 
-/* ================= RESPONSIVE ================= */
+/* ======================================================
+   🔥 MOBILE REDESIGN (HIGH-END AGENCY STYLE)
+====================================================== */
 
-@media (max-width: 1100px) {
-  header {
-    padding: 12px 40px;
-  }
+@media (max-width: 900px) {
 
-  header img {
-    height: 70px;
-  }
-
-  .hero {
-    padding: 140px 50px 60px;
-  }
-
-  .hero h1 {
-    font-size: 52px;
-  }
-
-  section {
-    padding: 60px 50px;
-  }
-}
-
-@media (max-width: 700px) {
   header {
     flex-direction: column;
     align-items: flex-start;
+    padding: 12px 22px;
+  }
+
+  header img {
+    height: 60px;
+    margin-bottom: 8px;
   }
 
   nav {
-    margin-top: 8px;
-    flex-wrap: wrap;
-    gap: 14px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 10px 18px;
+  }
+
+  nav a {
+    font-size: 13px;
   }
 
   .hero {
-    padding: 130px 26px 60px;
+    padding: 190px 24px 70px;
   }
 
   .hero h1 {
-    font-size: 40px;
+    font-size: 42px;
   }
 
   .hero p {
@@ -323,6 +297,40 @@ footer {
   }
 
   section {
-    padding: 55px 26px;
+    padding: 60px 24px;
+  }
+
+  .section-title {
+    font-size: 34px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .btn {
+    padding: 13px 30px;
+    font-size: 14px;
+  }
+}
+
+/* EXTRA SMALL PHONES */
+
+@media (max-width: 480px) {
+
+  header img {
+    height: 52px;
+  }
+
+  nav {
+    grid-template-columns: repeat(2, auto);
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .section-title {
+    font-size: 30px;
   }
 }
