@@ -2,9 +2,9 @@
 
 :root {
   --pink: #ff2f7d;
-  --pink-glow: rgba(255,47,125,0.4);
+  --pink-glow: rgba(255,47,125,0.45);
   --black: #000;
-  --dark: #0b0b0b;
+  --dark: #0a0a0a;
   --gray: #bdbdbd;
   --white: #fff;
 }
@@ -21,7 +21,7 @@ html {
 }
 
 body {
-  background: radial-gradient(circle at top left, #120007, #000 60%);
+  background: radial-gradient(circle at top left, #140008, #000 65%);
   color: white;
   overflow-x: hidden;
   line-height: 1.6;
@@ -38,18 +38,18 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 16px 60px;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.95), rgba(0,0,0,0.6));
-  backdrop-filter: blur(6px);
+  background: linear-gradient(to bottom, rgba(0,0,0,0.95), rgba(0,0,0,0.55));
+  backdrop-filter: blur(8px);
 }
 
 header img {
-  height: 64px;
+  height: 70px;
   transition: 0.3s ease;
 }
 
 nav {
   display: flex;
-  gap: 28px;
+  gap: 30px;
 }
 
 nav a {
@@ -75,13 +75,13 @@ nav a:hover::after {
   width: 100%;
 }
 
-/* ================= HERO SECTION (HOME) ================= */
+/* ================= HERO SECTION ================= */
 
 .hero {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 180px 80px 80px;
+  padding: 190px 80px 80px;
 }
 
 .hero-content {
@@ -97,13 +97,13 @@ nav a:hover::after {
 
 .hero h1 span {
   color: var(--pink);
-  text-shadow: 0 0 25px var(--pink-glow);
+  text-shadow: 0 0 28px var(--pink-glow);
 }
 
 .hero p {
   font-size: 18px;
   color: var(--gray);
-  margin-bottom: 28px;
+  margin-bottom: 30px;
   max-width: 620px;
 }
 
@@ -111,18 +111,18 @@ nav a:hover::after {
   display: inline-block;
   background: var(--pink);
   color: black;
-  padding: 14px 28px;
+  padding: 14px 30px;
   border-radius: 40px;
   font-weight: 700;
   font-size: 14px;
   text-decoration: none;
   transition: 0.25s ease;
-  box-shadow: 0 0 18px var(--pink-glow);
+  box-shadow: 0 0 22px var(--pink-glow);
 }
 
 .btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 28px var(--pink-glow);
+  box-shadow: 0 0 35px var(--pink-glow);
 }
 
 /* ================= SECTIONS ================= */
@@ -134,7 +134,7 @@ section {
 .section-title {
   font-size: 42px;
   font-weight: 800;
-  margin-bottom: 18px;
+  margin-bottom: 14px;
 }
 
 .section-sub {
@@ -144,16 +144,17 @@ section {
   margin-bottom: 50px;
 }
 
-/* ================= ABOUT / SERVICES ================= */
+/* ================= SERVICES BOXES (FIXED) ================= */
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 26px;
+  grid-template-columns: repeat(3, 1fr); /* FORCE 3 HORIZONTAL BOXES */
+  gap: 28px;
+  margin-top: 40px;
 }
 
 .card {
-  background: linear-gradient(180deg, #0c0c0c, #050505);
+  background: linear-gradient(180deg, #0d0d0d, #050505);
   border: 1px solid #1a1a1a;
   border-radius: 18px;
   padding: 28px;
@@ -190,26 +191,10 @@ section {
   margin-bottom: 60px;
 }
 
-.artist-header {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-bottom: 30px;
-}
-
-.artist-header span {
-  font-size: 12px;
-  padding: 6px 12px;
-  border-radius: 20px;
-  background: rgba(255,47,125,0.15);
-  color: var(--pink);
-  border: 1px solid rgba(255,47,125,0.4);
-}
-
 .news-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 28px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
 }
 
 .news-card {
@@ -252,7 +237,7 @@ footer {
 
 /* ================= MOBILE ================= */
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
 
   header {
     padding: 12px 22px;
@@ -261,7 +246,7 @@ footer {
   }
 
   header img {
-    height: 54px;
+    height: 70px;
     margin-bottom: 10px;
   }
 
@@ -278,20 +263,12 @@ footer {
     font-size: 44px;
   }
 
-  .hero p {
-    font-size: 16px;
-  }
-
   section {
     padding: 70px 24px;
   }
 
-  .section-title {
-    font-size: 34px;
-  }
-
-  .news-title {
-    font-size: 36px;
+  .card-grid {
+    grid-template-columns: 1fr; /* stack cards on mobile */
   }
 
   .news-grid {
