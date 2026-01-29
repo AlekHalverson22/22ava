@@ -101,6 +101,17 @@ HERO SECTION
   max-width: 620px;
 }
 
+/* =========================
+CENTER PAGE HERO TITLES (EXCEPT HOME)
+========================= */
+body:not(.home-page) .hero {
+  text-align: center;
+}
+
+body:not(.home-page) .hero-content {
+  margin: 0 auto;
+}
+
 .hero h1 {
   font-size: 64px;
   line-height: 1.05;
