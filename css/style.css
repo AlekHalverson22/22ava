@@ -1,16 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap');
 
 :root {
   --pink: #ff2f7d;
-  --pink-soft: #ff6aa7;
-  --pink-glow: rgba(255,47,125,0.25);
+  --pink-glow: rgba(255,47,125,0.4);
   --black: #000;
-  --dark: #0a0a0a;
+  --dark: #0b0b0b;
   --gray: #bdbdbd;
-  --white: #ffffff;
+  --white: #fff;
 }
-
-/* ================= RESET ================= */
 
 * {
   margin: 0;
@@ -24,42 +21,29 @@ html {
 }
 
 body {
-  background: radial-gradient(circle at top left, rgba(255,47,125,0.08), transparent 40%), #000;
-  color: var(--white);
+  background: radial-gradient(circle at top left, #120007, #000 60%);
+  color: white;
   overflow-x: hidden;
+  line-height: 1.6;
 }
 
-/* ================= GLOBAL TEXT ================= */
-
-.glow {
-  text-shadow: 0 0 8px var(--pink-glow);
-}
-
-.gradient-text {
-  background: linear-gradient(135deg, var(--pink), var(--pink-soft));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* ================= HEADER / NAV ================= */
+/* ================= HEADER ================= */
 
 header {
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 14px 60px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   z-index: 1000;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.5), transparent);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 60px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.95), rgba(0,0,0,0.6));
   backdrop-filter: blur(6px);
 }
 
 header img {
   height: 64px;
-  max-width: 240px;
-  object-fit: contain;
   transition: 0.3s ease;
 }
 
@@ -73,227 +57,185 @@ nav a {
   text-decoration: none;
   font-size: 14px;
   font-weight: 500;
-  letter-spacing: 0.3px;
   position: relative;
-  transition: 0.25s ease;
 }
 
 nav a::after {
   content: "";
   position: absolute;
-  bottom: -6px;
   left: 0;
+  bottom: -6px;
   width: 0;
   height: 2px;
   background: var(--pink);
-  transition: 0.25s ease;
+  transition: 0.3s;
 }
 
 nav a:hover::after {
   width: 100%;
 }
 
-nav a:hover {
-  color: var(--pink-soft);
-}
-
-/* ================= BUTTONS ================= */
-
-.btn {
-  display: inline-block;
-  padding: 12px 26px;
-  border-radius: 30px;
-  background: linear-gradient(135deg, var(--pink), var(--pink-soft));
-  color: black;
-  font-weight: 700;
-  font-size: 14px;
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-  transition: 0.3s ease;
-  box-shadow: 0 0 18px rgba(255,47,125,0.25);
-}
-
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 0 28px rgba(255,47,125,0.45);
-}
-
-/* ================= PAGE SECTIONS ================= */
-
-section {
-  padding: 140px 80px 60px;
-  max-width: 1300px;
-  margin: auto;
-}
-
-/* ================= HERO ================= */
+/* ================= HERO SECTION (HOME) ================= */
 
 .hero {
-  padding-top: 180px;
-  max-width: 1200px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 180px 80px 80px;
+}
+
+.hero-content {
+  max-width: 720px;
 }
 
 .hero h1 {
-  font-size: 68px;
-  font-weight: 900;
+  font-size: 64px;
+  font-weight: 800;
   line-height: 1.05;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
+}
+
+.hero h1 span {
+  color: var(--pink);
+  text-shadow: 0 0 25px var(--pink-glow);
 }
 
 .hero p {
-  font-size: 17px;
+  font-size: 18px;
   color: var(--gray);
-  max-width: 620px;
-  line-height: 1.7;
   margin-bottom: 28px;
+  max-width: 620px;
 }
 
-/* ================= CARDS ================= */
+.btn {
+  display: inline-block;
+  background: var(--pink);
+  color: black;
+  padding: 14px 28px;
+  border-radius: 40px;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  transition: 0.25s ease;
+  box-shadow: 0 0 18px var(--pink-glow);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 28px var(--pink-glow);
+}
+
+/* ================= SECTIONS ================= */
+
+section {
+  padding: 90px 80px;
+}
+
+.section-title {
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+
+.section-sub {
+  font-size: 16px;
+  color: var(--gray);
+  max-width: 680px;
+  margin-bottom: 50px;
+}
+
+/* ================= ABOUT / SERVICES ================= */
 
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 28px;
-  margin-top: 40px;
+  gap: 26px;
 }
 
 .card {
-  background: linear-gradient(180deg, #0b0b0b, #050505);
+  background: linear-gradient(180deg, #0c0c0c, #050505);
   border: 1px solid #1a1a1a;
   border-radius: 18px;
   padding: 28px;
-  transition: 0.35s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at top left, rgba(255,47,125,0.15), transparent 50%);
-  opacity: 0;
-  transition: 0.35s ease;
-}
-
-.card:hover::before {
-  opacity: 1;
+  transition: 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-6px);
   border-color: var(--pink);
 }
 
 .card h3 {
   font-size: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .card p {
   font-size: 15px;
   color: var(--gray);
-  line-height: 1.6;
 }
 
 /* ================= NEWS PAGE ================= */
 
-.news-hero {
-  padding: 180px 80px 40px;
-  max-width: 1300px;
-  margin: auto;
-}
-
 .news-title {
-  font-size: 52px;
-  font-weight: 900;
-  margin-bottom: 10px;
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 12px;
 }
 
 .news-subtitle {
+  font-size: 16px;
   color: var(--gray);
-  font-size: 17px;
-  max-width: 680px;
-  line-height: 1.6;
+  max-width: 700px;
+  margin-bottom: 60px;
 }
-
-.news-section {
-  padding-top: 20px;
-  max-width: 1300px;
-  margin: auto;
-}
-
-/* Artist Header */
 
 .artist-header {
   display: flex;
   align-items: center;
   gap: 14px;
-  margin-bottom: 28px;
-}
-
-.artist-header h2 {
-  font-size: 32px;
-  font-weight: 800;
+  margin-bottom: 30px;
 }
 
 .artist-header span {
   font-size: 12px;
   padding: 6px 12px;
   border-radius: 20px;
-  background: rgba(255,47,125,0.12);
+  background: rgba(255,47,125,0.15);
   color: var(--pink);
-  border: 1px solid rgba(255,47,125,0.35);
+  border: 1px solid rgba(255,47,125,0.4);
 }
-
-/* News Grid */
 
 .news-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-  gap: 26px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 28px;
 }
-
-/* News Cards */
 
 .news-card {
   background: linear-gradient(180deg, #0b0b0b, #050505);
   border: 1px solid #1a1a1a;
-  padding: 28px;
+  padding: 26px;
   border-radius: 18px;
-  transition: 0.35s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.news-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at top left, rgba(255,47,125,0.15), transparent 50%);
-  opacity: 0;
-  transition: 0.35s ease;
-}
-
-.news-card:hover::before {
-  opacity: 1;
+  transition: 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .news-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-6px);
   border-color: var(--pink);
 }
 
 .news-card h3 {
-  font-size: 20px;
+  font-size: 19px;
   margin-bottom: 12px;
 }
 
 .news-card p {
-  font-size: 15px;
+  font-size: 14px;
   color: var(--gray);
-  line-height: 1.6;
   margin-bottom: 20px;
 }
 
@@ -301,41 +243,35 @@ section {
 
 footer {
   text-align: center;
-  padding: 60px 20px 40px;
-  color: #777;
+  padding: 40px;
   font-size: 13px;
+  color: #666;
   border-top: 1px solid #111;
   margin-top: 80px;
 }
 
-/* ================= MOBILE DESIGN ================= */
+/* ================= MOBILE ================= */
 
 @media (max-width: 900px) {
 
   header {
-    padding: 12px 20px;
+    padding: 12px 22px;
     flex-direction: column;
     align-items: flex-start;
   }
 
   header img {
-    height: 52px;
+    height: 54px;
     margin-bottom: 10px;
   }
 
   nav {
-    width: 100%;
-    display: flex;
     flex-wrap: wrap;
     gap: 14px;
   }
 
-  nav a {
-    font-size: 13px;
-  }
-
-  section {
-    padding: 160px 22px 60px;
+  .hero {
+    padding: 200px 24px 60px;
   }
 
   .hero h1 {
@@ -346,39 +282,19 @@ footer {
     font-size: 16px;
   }
 
-  .news-hero {
-    padding: 200px 22px 30px;
+  section {
+    padding: 70px 24px;
+  }
+
+  .section-title {
+    font-size: 34px;
   }
 
   .news-title {
-    font-size: 40px;
-  }
-
-  .artist-header {
-    flex-direction: column;
-    align-items: flex-start;
+    font-size: 36px;
   }
 
   .news-grid {
     grid-template-columns: 1fr;
-  }
-
-  .btn {
-    width: fit-content;
-  }
-}
-
-@media (max-width: 500px) {
-
-  header img {
-    height: 46px;
-  }
-
-  .hero h1 {
-    font-size: 38px;
-  }
-
-  nav {
-    gap: 10px;
   }
 }
