@@ -16,6 +16,9 @@ RESET & VARIABLES
   --border: rgba(255,255,255,0.15);
 }
 
+/* =========================
+BASE STYLES
+========================= */
 body {
   font-family: Arial, sans-serif;
   background: radial-gradient(circle at top left, #2b0015, #000 65%);
@@ -23,7 +26,7 @@ body {
   line-height: 1.6;
 }
 
-/* SAFE IMAGE RULE */
+/* Safe image rule */
 img {
   max-width: 100%;
   height: auto;
@@ -86,7 +89,7 @@ HERO SECTION
   align-items: center;
 }
 
-/* NEW HERO LAYOUT (TEXT + LOGO) */
+/* Homepage hero layout (text + logo) */
 .hero-inner {
   max-width: 1200px;
   margin: auto;
@@ -99,17 +102,6 @@ HERO SECTION
 
 .hero-content {
   max-width: 620px;
-}
-
-/* =========================
-CENTER PAGE HERO TITLES (EXCEPT HOME)
-========================= */
-body:not(.home-page) .hero {
-  text-align: center;
-}
-
-body:not(.home-page) .hero-content {
-  margin: 0 auto;
 }
 
 .hero h1 {
@@ -127,12 +119,51 @@ body:not(.home-page) .hero-content {
   max-width: 520px;
 }
 
-/* BIG HOMEPAGE LOGO */
+/* =========================
+CENTER HERO TITLES (INNER PAGES)
+========================= */
+body:not(.home-page) .hero {
+  text-align: center;
+}
+
+body:not(.home-page) .hero-content {
+  margin: 0 auto;
+}
+
+/* =========================
+PREMIUM HOMEPAGE LOGO
+========================= */
+.hero-logo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .hero-logo img {
-  width: 380px;
+  width: 420px;
   max-width: 100%;
+  z-index: 2;
   opacity: 0.95;
-  filter: drop-shadow(0 20px 50px rgba(255,47,125,0.25));
+  filter: drop-shadow(0 25px 60px rgba(255,47,125,0.35));
+  animation: floatLogo 6s ease-in-out infinite;
+}
+
+/* glowing aura behind logo */
+.logo-glow {
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(255,47,125,0.35), transparent 65%);
+  filter: blur(60px);
+  z-index: 1;
+}
+
+/* subtle floating animation */
+@keyframes floatLogo {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
 }
 
 /* =========================
@@ -163,7 +194,7 @@ BUTTONS
 }
 
 /* =========================
-TEXT
+TEXT STYLES
 ========================= */
 .section-title {
   font-size: 42px;
@@ -177,7 +208,7 @@ TEXT
 }
 
 /* =========================
-GRID / CARDS
+CARD GRID (3 BOXES)
 ========================= */
 .card-grid {
   display: grid;
@@ -203,7 +234,7 @@ GRID / CARDS
 }
 
 /* =========================
-PROFILE IMAGES
+PROFILE IMAGES (ARTISTS + CONTACT)
 ========================= */
 .profile-image {
   width: 320px;
@@ -261,6 +292,7 @@ form textarea {
   border: 1px solid #333;
   color: white;
   border-radius: 8px;
+  font-size: 14px;
 }
 
 /* =========================
@@ -321,7 +353,11 @@ RESPONSIVE (MOBILE)
   }
 
   .hero-logo img {
+    width: 240px;
+  }
+
+  .logo-glow {
     width: 220px;
-    margin-top: 30px;
+    height: 220px;
   }
 }
