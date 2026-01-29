@@ -78,17 +78,27 @@ LAYOUT SYSTEM
 }
 
 /* =========================
-HERO
+HERO SECTION
 ========================= */
 .hero {
-  min-height: 55vh;
+  min-height: 60vh;
   display: flex;
   align-items: center;
 }
 
+/* NEW HERO LAYOUT (TEXT + LOGO) */
+.hero-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 60px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
 .hero-content {
   max-width: 620px;
-  padding: 60px 24px;
 }
 
 .hero h1 {
@@ -104,6 +114,14 @@ HERO
 .hero p {
   color: var(--muted);
   max-width: 520px;
+}
+
+/* BIG HOMEPAGE LOGO */
+.hero-logo img {
+  width: 380px;
+  max-width: 100%;
+  opacity: 0.95;
+  filter: drop-shadow(0 20px 50px rgba(255,47,125,0.25));
 }
 
 /* =========================
@@ -174,7 +192,7 @@ GRID / CARDS
 }
 
 /* =========================
-PROFILE IMAGES (ARTISTS + CONTACT)
+PROFILE IMAGES
 ========================= */
 .profile-image {
   width: 320px;
@@ -265,7 +283,7 @@ ANIMATIONS
 }
 
 /* =========================
-RESPONSIVE
+RESPONSIVE (MOBILE)
 ========================= */
 @media (max-width: 900px) {
   .hero h1 {
@@ -284,5 +302,15 @@ RESPONSIVE
 
   .nav a {
     margin: 0 10px;
+  }
+
+  .hero-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-logo img {
+    width: 220px;
+    margin-top: 30px;
   }
 }
