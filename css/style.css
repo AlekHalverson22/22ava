@@ -214,3 +214,14 @@ img {
     margin: 0 10px;
   }
 }
+
+/* =========================
+   ARTIST & CONTACT IMAGES
+========================= */
+.profile-image {
+  width: 320px;
+  max-width: 100%;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  object-fit: cover;
+}
